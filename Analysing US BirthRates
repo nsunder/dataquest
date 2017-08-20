@@ -1,0 +1,26 @@
+f= open("births.csv",'r')
+text = f.read()
+
+spl = text.split('\n')
+
+tempOne={}
+Two_spl = spl[1:3652]
+for item in Two_spl:
+    temp = item.split(",")
+    one_var = temp[3]
+    two_var = int(temp[4])
+    if one_var in tempOne:
+        tempOne[one_var] += two_var
+    else:
+        tempOne[one_var] =two_var
+    
+print(tempOne)
+
+Birth Dates in the United States
+Opened birthdates.csv file converted it to a string delimted the comma operator and counted the number of biths on each day of the week
+the birthdates.csv contains columns in the order
+'year' -Year
+'month' - Month
+'Date_of_month' - Day number of the month
+'day_of_week' - Day of week, where 1 is monday and 7 is sunday
+'births' - Number of birthds
